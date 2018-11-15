@@ -10,4 +10,4 @@ services:
     ports:
       - 127.0.0.1:7000:7000
     volumes:
-      - /c/Users/fedor/Documents/Coins/BTC/wallets:/data
+      - /c/Users/fedor/Documents/Coins/BTC/wallets/wallet_btc_testnet:/data/default_wallet
