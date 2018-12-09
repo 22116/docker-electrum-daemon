@@ -20,10 +20,13 @@ RUN mkdir -p ${ELECTRUM_HOME}/.electrum/wallets/ ${ELECTRUM_HOME}/.electrum/test
 	ln -sf /data/default_wallet ${ELECTRUM_HOME}/.electrum/wallets/ && \
 	chown -R ${ELECTRUM_USER} ${ELECTRUM_HOME}/.electrum
 
+COPY docker-entrypoint.sh /usr/local/bin/
+
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
+    && ln -s /usr/local/bin/docker-entrypoint.sh
+
 USER $ELECTRUM_USER
 WORKDIR $ELECTRUM_HOME
-
-COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
