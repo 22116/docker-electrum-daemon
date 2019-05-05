@@ -4,10 +4,10 @@ set -ex
 # Graceful shutdown
 trap 'pkill -TERM -P1; electrum daemon stop; exit 0' SIGTERM
 
+TEST=''
+
 if [ ${TESTNET} == 1 ];then
-    TEST = '--testnet'
-else
-    TEST = ''
+    TEST='--testnet'
 fi
 
 # Set config
