@@ -1,6 +1,6 @@
 FROM python:3.6-alpine
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl build-base linux-headers
 
 ARG ELECTRUM_VERSION
 ARG ELECTRUM_USER
